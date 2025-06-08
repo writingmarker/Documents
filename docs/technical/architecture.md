@@ -1,8 +1,10 @@
-# Writing Marker 智能英语作文批改平台
+# 系统架构设计
 
-## 技术路线文档 - 比赛路演宣讲版
+## Writing Marker 技术架构概述
 
-## 1. 项目架构概览
+Writing Marker 采用现代化的微服务架构，确保系统的高可用性、可扩展性和安全性。我们的技术栈经过精心选择，以支持复杂的AI模型运行和流畅的用户体验。
+
+### 系统架构图
 
 ```mermaid
 flowchart TD
@@ -224,5 +226,3 @@ sequenceDiagram
 - **负载均衡** - 支持流量增长的水平扩展
 - **缓存策略** - 多级缓存提升性能
 - **多租户架构** - 支持教育机构定制化部署
-
-本文档由 **Writing Marker** 颁发 [CC BY-NC-SA 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可。
