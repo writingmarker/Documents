@@ -1,0 +1,54 @@
+name: 同步到复刻仓库
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    if: github.repository == 'writingmarker/Documents' 
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false # 关键：阻止 checkout 步骤持久化其凭证，以免干扰自定义 PAT
+
+      - name: 设置 Git 配置并推送到私有复刻仓库
+        env:
+          GH_PAT: ${{ secrets.PUSH_TO_FORK_TOKEN }}  # PAT，具有对目标私有仓库的 'repo' 写入权限
+          FORK_OWNER: ${{ vars.FORK_USERNAME }}      # 目标私有复刻仓库的拥有者 (用户或组织)
+          FORK_REPO: ${{ vars.FORK_REPO_NAME }}       # 目标私有复刻仓库的名称
+        run: |
+          set -e # 如果任何命令失败，则立即退出脚本
+
+          echo "源仓库当前分支: ${{ github.ref_name }}"
+          echo "目标用户/组织: ${FORK_OWNER}"
+          echo "目标仓库名: ${FORK_REPO}"
+
+          # 配置 Git 用户信息
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "github-actions-bot@users.noreply.github.com"
+          
+          # 明确清理任何可能由 checkout 步骤或其他地方设置的、可能干扰认证的 HTTP extraheader
+          # 虽然 persist-credentials:false 应该能处理，但多一步清理更保险
+          git config --global --unset-all "http.https://github.com/.extraheader" || true
+          
+          # 确保不使用任何外部的 credential helper，强制 Git 使用 URL 中的认证信息
+          git config --global --unset-all credential.helper || true
+          git config --global credential.helper ""
+
+          # 构造带有 PAT 的目标仓库 URL
+          TARGET_REPO_URL_WITH_PAT="https://x-access-token:${GH_PAT}@github.com/${FORK_OWNER}/${FORK_REPO}.git"
+          
+          # 推送当前触发工作流的分支到目标仓库的 main 分支
+          # 使用 --force 会覆盖目标仓库的历史。如果不想强制，需要处理合并冲突。
+          echo "正在将本地分支 '${{ github.ref_name }}' 推送到远程仓库 '${FORK_OWNER}/${FORK_REPO}' 的 'main' 分支..."
+          git push --force "${TARGET_REPO_URL_WITH_PAT}" "${{ github.ref_name }}:main"
+
+          echo "成功将本地分支 '${{ github.ref_name }}' 推送到私有复刻仓库 '${FORK_OWNER}/${FORK_REPO}' 的 'main' 分支！"
