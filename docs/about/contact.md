@@ -7,7 +7,7 @@
 - **资源协调**：统筹团队资源分配，协调跨职能协作
 - **决策把控**：负责关键技术选型与架构决策评审
 
-## 周大添 | 技术架构师 & DevOps专家 (Technical Architect & DevOps Specialist)
+## [Mrered](https://github.com/Mrered) | 技术架构师 & DevOps专家 (Technical Architect & DevOps Specialist)
 
 - **架构设计**：制定系统整体技术架构与解决方案
 - **敏捷管理**：需求分解与迭代规划，技术任务分派
@@ -15,21 +15,21 @@
 - **CI/CD工程**：构建自动化部署流水线，配置云基础设施
 - **系统监控**：实现性能指标监控与日志分析系统
 
-## 李哲雍 | 前端技术负责人 (Frontend Technical Lead)
+## [lizheyong](https://github.com/lizheyong) | 前端技术负责人 (Frontend Technical Lead)
 
 - **前端架构**：设计与实现前端核心架构与组件系统
 - **交互设计**：优化用户界面与交互体验，实现响应式布局
 - **性能优化**：实施代码分割、懒加载等前端性能提升策略
 - **跨端适配**：确保多设备兼容性与PWA功能实现
 
-## 王大宇 | 后端开发专家 (Backend Development Specialist)
+## [wdy413](https://github.com/wdy413) | 后端开发专家 (Backend Development Specialist)
 
 - **API设计**：设计RESTful API接口规范与Serverless函数架构
 - **数据建模**：设计数据库模式与实体关系，优化查询性能
 - **中间件开发**：实现认证、缓存、日志等核心中间件
 - **AI集成**：负责大模型API集成与优化调用策略
 
-## 王钰琦 | 产品运营经理 (Product Operations Manager)
+## [KhalilWang](https://github.com/KhalilWang) | 产品运营经理 (Product Operations Manager)
 
 - **产品文档**：编写用户手册、FAQ与知识库
 - **市场策略**：制定产品推广计划与内容营销策略
