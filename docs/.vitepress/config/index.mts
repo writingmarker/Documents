@@ -75,7 +75,8 @@ function navZh() {
       { text: '教师协作平台', link: '/usage/teacher-platform' },
       { text: '数据驱动进步', link: '/usage/progress-tracking' }
     ]},
-    { text: '技术方案', link: '/technical/architecture' }
+    { text: '技术方案', link: '/technical/architecture' },
+    { text: '联系我们', link: '/about/contact' }
   ];
 }
 
@@ -110,7 +111,8 @@ function navEn() {
       { text: 'Teacher Platform', link: '/en/usage/teacher-platform' },
       { text: 'Progress Tracking', link: '/en/usage/progress-tracking' }
     ]},
-    { text: 'Technical', link: '/en/technical/architecture' }
+    { text: 'Technical', link: '/en/technical/architecture' },
+    { text: 'Contact Us', link: '/en/about/contact' }
   ];
 }
 

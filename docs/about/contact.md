@@ -24,12 +24,12 @@
 
 ## [wdy413](https://github.com/wdy413) | 后端开发专家 (Backend Development Specialist)
 
-- **API设计**：设计RESTful API接口规范与Serverless函数架构
+- **API设计**：设计RESTful API接口规范与Edge Functions
 - **数据建模**：设计数据库模式与实体关系，优化查询性能
-- **中间件开发**：实现认证、缓存、日志等核心中间件
+- **中间件开发**：构建消息中间件等核心组件，集成实现认证、缓存、日志模块
 - **AI集成**：负责大模型API集成与优化调用策略
 
-## [KhalilWang](https://github.com/KhalilWang) | 产品运营经理 (Product Operations Manager)
+## [KhalilWang](https://github.com/helloworld-maker-create) | 产品运营经理 (Product Operations Manager)
 
 - **产品文档**：编写用户手册、FAQ与知识库
 - **市场策略**：制定产品推广计划与内容营销策略
